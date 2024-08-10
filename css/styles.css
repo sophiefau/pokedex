@@ -5,4 +5,10 @@ background-color:#280c30;
   font-weight: 500;
   line-height: 2;
   padding: 20px;
+  margin: auto;
+  text-align: center;
+}
+
+.logo{
+  width: 200px;
 }
