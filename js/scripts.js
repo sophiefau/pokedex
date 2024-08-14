@@ -1,3 +1,6 @@
+let pokemonRepository = (function () {
+
+
 let pokemonList = [
     {name: 'Pikachu', height: 0.4, type: 'Electric'},
     {name: 'Charmander', height: 0.6, type: 'Fire'},
@@ -14,11 +17,13 @@ let pokemonList = [
     if (pokemonList.height >1.5){document.write(" This is a huge Pokémon!!" + "</p>")}
   });
   
+})();
 
 
 
-// let pokemonRepository = (function () {
-// })();
+
+
+
 
 
   /* function printArrayDetails(){
@@ -28,30 +33,7 @@ let pokemonList = [
       if (pokemonList[i].height >1.5){document.write(" This is a huge Pokémon!!" + "</p>")}
     }
   };
-  
   printArrayDetails(); */
-
-  // function add(pokemon) {
-  //   pokemonList.push(pokemon);
-  // }
-
-  // function getAll() {
-  //   return pokemonList;
-  // }
-
-  // return {
-  //   add: add,
-  //   getAll: getAll
-  // };
-
-
-// console.log(pokemonRepository.getAll()); // []
-// pokemonRepository.add({ name: 'Pikachu' });
-// console.log(pokemonRepository.getAll()); // [ { name: 'Pikachu' } ]
-
-
-
-
 
 /* else if (pokemonList[i].height <0.5 && pokemonList[i].height >1.5){
   document.write("Oh that's an average Pokémon.");}
