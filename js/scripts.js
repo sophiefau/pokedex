@@ -10,34 +10,24 @@ let pokemonList = [
     {name: 'Foongus', height: 0.2, type: ['Grass',' Poison',]},
     {name: 'Purrloin', height: 0.4, type: 'Dark'}
   ];
-
-
-  pokemonList.forEach (function(pokemonList) {
-    document.write("<p>" + pokemonList.name + " (height:" + pokemonList.height + "m) - Type: "+ pokemonList.type);
-    if (pokemonList.height >1.5){document.write(" This is a huge Pokémon!!" + "</p>")}
-  });
-  
-})();
-
-
-
-
-
-
-
-
-  /* function printArrayDetails(){
-    for (let i = 0; i < pokemonList.length; i++) {
-      /* document.write (`${pokemonList[i].name} (height: ${pokemonList[i].height}m)`) */
-  /*     document.write("<p>" + pokemonList[i].name + "(height:" + pokemonList[i].height + "m )");
-      if (pokemonList[i].height >1.5){document.write(" This is a huge Pokémon!!" + "</p>")}
+   
+    function add(pokemon) {
+    pokemonList.push(pokemon);
     }
-  };
-  printArrayDetails(); */
 
-/* else if (pokemonList[i].height <0.5 && pokemonList[i].height >1.5){
-  document.write("Oh that's an average Pokémon.");}
-else {
-  document.write("This Pokémon is tiny...")} */
-
+    function getAll() {
+      return pokemonList;
+    }
+    
+    return {
+      add: add,
+      getAll: getAll
+    };
+})();
+    
+    pokemonRepository.getAll().forEach(function(pokemon) {
+    document.write("<p>" + pokemon.name + " (height:" + pokemon.height + "m - type: "+ pokemon.type + ")");
+    if (pokemon.height > 1.5) {
+        document.write (" Wow, this Pokémon is huge!" + "</p>")}
+  });
 
