@@ -23,8 +23,15 @@ let pokemonList = [
     let button = document.createElement('button');
     button.innerText = pokemon.name;
     button.classList.add('button-class');
+    button.addEventListener('click', function () {
+      showDetails(pokemon);
+    });
     pokemonLi.appendChild(button);
     pokemonUl.appendChild(pokemonLi);
+  }
+
+  function showDetails(pokemon) {
+    console.log(pokemon.name);
   }
 
   return {
