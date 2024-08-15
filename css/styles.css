@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
 background-color:#100236;
   color:#fafaf6;
@@ -11,4 +17,25 @@ background-color:#100236;
 
 .logo{
   width: 200px;
+}
+
+ul.pokemon-list li{
+  list-style-type: none;
+  margin: auto;
+}
+
+.button-class{
+  display: inline-block;
+  background-color: #4c74af;
+  color: rgb(255, 255, 255);
+  width: 150px;
+  margin: 4px 2px;
+  padding: 16px 32px;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  -webkit-transition-duration: 0.8s; 
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
