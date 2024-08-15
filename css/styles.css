@@ -1,3 +1,11 @@
+:root {
+  --background-color:#070236; 
+  --text-color: #fafaf6;
+  --button-color: #4c74af;
+  --button-border-color:#292003;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +13,7 @@
 }
 
 body{
-background-color:#100236;
-  color:#fafaf6;
+  background-color:var(--background-color);
   font-family: "Nunito", sans-serif;
   font-weight: 500;
   line-height: 2;
@@ -26,16 +33,23 @@ ul.pokemon-list li{
 
 .button-class{
   display: inline-block;
-  background-color: #4c74af;
-  color: rgb(255, 255, 255);
+  background-color: var(--button-color);
+  color: var(--text-color);
+  border-right: 1px solid var(--button-border-color);
+  border-bottom: 2px solid var(--button-border-color);
   width: 150px;
   margin: 4px 2px;
-  padding: 16px 32px;
+  padding: 12px 32px;
   border-radius: 12px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  -webkit-transition-duration: 0.8s; 
-  transition-duration: 0.4s;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.1s ease, transform 0.2s ease;
+}
+
+.button-class:hover{
+  transform: scale(1.05);
   cursor: pointer;
 }
