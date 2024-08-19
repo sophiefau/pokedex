@@ -2,9 +2,8 @@
   --background-color:#070236; 
   --text-color: #fafaf6;
   --button-color: #4c74af;
-  --button-border-color:#292003;
+  --button-border-color:#5e4905;
 }
-
 
 * {
   margin: 0;
@@ -18,38 +17,41 @@ body{
   font-weight: 500;
   line-height: 2;
   padding: 20px;
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
 }
 
 .logo{
   width: 200px;
+  height: auto;
+  margin: auto;
 }
 
 ul.pokemon-list li{
   list-style-type: none;
-  margin: auto;
 }
 
 .button-class{
   display: inline-block;
   background-color: var(--button-color);
   color: var(--text-color);
-  border-right: 1px solid var(--button-border-color);
+  border: none;
   border-bottom: 2px solid var(--button-border-color);
-  width: 150px;
+  width: 170px;
   margin: 4px 2px;
   padding: 12px 32px;
   border-radius: 12px;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
-  letter-spacing: 1px;
+  font-size: 15px;
+  text-transform: capitalize;
+  letter-spacing: 2px;
   cursor: pointer;
   transition: 0.1s ease, transform 0.2s ease;
 }
 
-.button-class:hover{
+.button-class:hover,
+.button-class:focus{
   transform: scale(1.05);
   cursor: pointer;
 }
