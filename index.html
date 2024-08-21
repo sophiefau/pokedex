@@ -9,7 +9,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Noto+Serif:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
     rel="stylesheet">
-  <title>Sophie - Pokédex</title>
+  <title>Sophie's Pokédex</title>
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -19,10 +20,9 @@
       alt="logo for the pokedex showing a cute pokemon and a pokeball in the background">
   </header>
   <main>
-    <div class="loading-message">
-      <p>Loading...</p>
-    </div>
     <ul class="pokemon-list"></ul>
+    <div id="modal-container">
+    </div>
   </main>
   <script src="js/promise-polyfill.js"></script>
   <script src="js/fetch-polyfill.js"></script>

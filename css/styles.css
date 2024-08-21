@@ -37,9 +37,9 @@ ul.pokemon-list li{
   color: var(--text-color);
   border: none;
   border-bottom: 2px solid var(--button-border-color);
-  width: 170px;
+  width: 150px;
   margin: 4px 2px;
-  padding: 12px 32px;
+  padding: 10px 32px;
   border-radius: 12px;
   text-align: center;
   text-decoration: none;
@@ -54,4 +54,95 @@ ul.pokemon-list li{
 .button-class:focus{
   transform: scale(1.05);
   cursor: pointer;
+}
+
+#modal-container {
+  display: none;
+  }
+
+#modal-container.is-visible {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999; 
+  overflow: a vuto; 
+  display: grid;
+  text-align: center;
+}
+
+.modal {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+  grid-template-rows: auto 1fr; /* Title on top, content below */
+}
+
+.modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: #777;
+  text-decoration: underline;
+}
+
+.modal h1 {
+  margin-top: 0;
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--background-color);
+}
+
+.modal-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Image on the left, text on the right */
+  gap:15px;
+}
+
+.pokemon-img{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  color: var(--text-color);;
+}
+
+.pokemon-img img{
+  width: 300px;
+}
+
+.pokemon-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--background-color);
+}
+
+.pokemon-text p{
+  font-size: 22px;
+  margin-top: 0;
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+      grid-template-columns: 1fr; /* Switch to a single column */
+  }
+
+  .pokemon-img img {
+      height: auto; /* Allow the image to resize naturally */
+  }
+
+  .pokemon-text {
+      padding: 15px; /* Adjust padding for smaller screens */
+  }
 }
