@@ -145,4 +145,8 @@ ul.pokemon-list li{
   .pokemon-text {
       padding: 15px; /* Adjust padding for smaller screens */
   }
+
+  .pokemon-text p{
+    font-size: 20px;
+}
 }
