@@ -1,7 +1,27 @@
-This project is a Pokédex, listing Pokémons and showing some details about them.
+# Pokédex
 
-Open index.html in your browser
+## Description
 
-It is using HTML5, CSS3 and JS ES6 and above.
+This project is a simple web application that displays a list of Pokémons fetched from the PokéAPI. Users can click on a Pokémon to see its details in a modal. It's also possible to search for specific Pokémons through the search bar.
 
-The API used is https://pokeapi.co/api/v2/pokemon
+## Features
+
+- Fetches a list of Pokémon from the PokéAPI
+- Displays a list of Pokémons
+- Filters Pokémons through the search field
+- Shows details of each Pokémon on a modal upon clicking
+
+## Technologies
+
+- HTML
+- CSS 
+- Bootstrap
+- JavaScript
+- jQuery
+- Fetch API
+
+## Dependencies
+
+- Pokémon API: https://pokeapi.co/api/v2/pokemon/?limit=1302
+- jQuery: https://code.jquery.com/jquery-3.3.1.min.js
+- Bootstrap: https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js
