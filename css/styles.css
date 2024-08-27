@@ -26,6 +26,14 @@ body{
  padding: 0;
 }
 
+.navbar-brand{
+  margin: 0;
+  padding: 0;
+ }
+
+.logo{
+  margin-left: 5px;
+}
 img.logo{
   width: 150px;
 }
@@ -38,6 +46,10 @@ img.logo{
 
 ul.pokemon-list li{
   list-style-type: none;
+}
+
+.btn{
+  border-radius: 12px;
 }
 
 .button-class{
@@ -142,9 +154,10 @@ ul.pokemon-list li{
   margin-top: 0;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
   .logo{
     margin:auto;
+    padding: 0;
   }
 
   .search-bar{
