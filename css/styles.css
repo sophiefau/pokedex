@@ -53,7 +53,7 @@ img.logo{
   list-style-type: none;
 }
 
-li{
+.list{
   margin-bottom: 0;
 }
 
@@ -62,13 +62,12 @@ li{
 }
 
 .button-class{
-  display: inline-block;
   background-color: var(--button-color);
   color: var(--text-color);
   border: none;
   border-bottom: 4px solid var(--button-border-color);
   width: 200px;
-  margin: 4px 2px;
+  margin: 3px 2px;
   padding: 10px 15px;
   border-radius: 25px;
   text-align: center;
@@ -86,51 +85,17 @@ li{
   cursor: pointer;
 }
 
+.btn-primary:active,
+.btn:active{
+  transform: none;
+  border: none;
+}
+
 .img-button{
   max-width: fit-content;
   border-radius: 50%;
   margin: 5px;
 }
-
-/* #modal-container {
-  display: none;
-  }
-
-#modal-container.is-visible {
-  position: fixed;
-  /* padding: 20px;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999; 
-  overflow: a vuto; 
-  display: grid;
-  text-align: center; */
-/* } */ 
-/* 
-.modal {
-  margin: auto;
-  display: inline-block;
-  box-sizing: border-box;
-  background: #fff;
-  border-radius: 12px;
-  padding: 15px;
-  width: 100%;
-  max-width: 600px;
-  text-align: left;
-}
-
-.modal-close {
-  float: right;
-  -webkit-appearance: none;
-  border: 0;
-  background: none;
-  color: #777;
-  text-decoration: underline;
-} */
 
 .h1 {
   margin-top: 0;
@@ -139,31 +104,8 @@ li{
   color: var(--background-color);
 }
 
-/* .modal-content{
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Image on the left, text on the right */
-  /* gap:15px;
-} */
-
-/* .pokemon-img{
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  color: var(--text-color);;
-}
-
-.pokemon-img img{
-  width: 300px;
-} */
-
-.pokemon-text{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: var(--background-color);
-}
-
 .pokemon-text p{
+  color: var(--background-color);
   font-size: 22px;
   margin-top: 0;
 }

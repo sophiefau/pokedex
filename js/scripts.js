@@ -53,11 +53,11 @@ let pokemonRepository = (function () {
   function addListItem(pokemon) {
     console.log('Image URL front:', pokemon.imageUrlFront);
     let pokemonUl = $('.pokemon-list');
-    let pokemonLi = $('<li></li>').addClass('col-lg-3 col-md-4 col-sm-6 mb-4');  // Add Bootstrap grid classes
+    let pokemonLi = $('<li></li>').addClass('list col-lg-3 col-md-4 col-sm-6 mb-4');  // Add Bootstrap grid classes
     let button = $('<button></button>')
                 .attr('data-toggle', 'modal')
                 .attr('data-target', '#exampleModal')
-                .addClass('button-class');
+                .addClass('button-class', 'btn', 'btn-primary');
                 
     let imgElement = $('<img>')
                 .attr('src', pokemon.imageUrlFront) // Set the image URL
@@ -91,9 +91,11 @@ let pokemonRepository = (function () {
     let modal = $('.modal-content');
     modal.empty(); // Clear the existing content
 
-    let modalTitle = $('.modal-title');
+    let modalHeader = $('.modal-header');
+    let modalTitle = $('.modal-title').addClass('.h1');
     modalTitle.text(pokemon.name);
     modal.append(modalTitle);
+    modal.append(modalHeader);
 
     let modalBody = $('.modal-body');
 
@@ -103,7 +105,7 @@ let pokemonRepository = (function () {
     modalBody.append(imgElementBack);
 
     let modalText = $('<div></div>').addClass('pokemon-text');
-    let typeP = $('<p></p>').text('Types: ' + pokemon.types.join(', '));
+    let typeP = $('<p></p>').text('Type: ' + pokemon.types.join(', '));
     let abilitiesP = $('<p></p>').text('Abilities: ' + pokemon.abilities.join(', '));
     let heightP = $('<p></p>').text('Height: ' + pokemon.height);
     let weightP = $('<p></p>').text('Weight: ' + pokemon.weight);
@@ -112,22 +114,6 @@ let pokemonRepository = (function () {
 
     modalBody.append(modal);
   }
-
-  // function hideModal() {
-  //   modalContainer.removeClass('is-visible');
-  // }
-
-  // $(window).on('keydown', function (e) {
-  //   if (e.key === 'Escape' && modalContainer.hasClass('is-visible')) {
-  //     hideModal();
-  //   }
-  // });
-
-  // modalContainer.on('click', function (e) {
-  //   if ($(e.target).is(modalContainer)) {
-  //     hideModal();
-  //   }
-  // });
 
   return {
     add: add,
