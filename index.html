@@ -21,18 +21,14 @@
       <img src="img/logopokedex-trans-small.png"
         alt="logo for the pokedex showing a cute pokemon and a pokeball in the background">
     </div>
-    <div class="search-bar">
-      <form class="form">
+    <div class="search-container">
+      <form class="search-form">
         <input id="search" type="text" class="input" placeholder="Search Pokémon" aria-label="Search"/>
-        <button type="submit">Go!</button>
+        <!-- <button id="clear" class="clear-results">clear</button> -->
+        <p id="no-results-message" class="hidden error-message">No Pokémon found!</p>
       </form>
     </div>
   </header>
-
-  <div class="results-container">
-    <ul class="results-list" id="list">
-    </ul>
- </div>
 
   <main>
     <div class="container">
