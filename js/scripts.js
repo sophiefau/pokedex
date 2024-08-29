@@ -46,6 +46,7 @@ let pokemonRepository = (function () {
     });
   }
 
+  // search bar
   function filterPokemonList(query) {
     const allPokemons = pokemonRepository.getAll();
     const filteredPokemons = allPokemons.filter(pokemon =>
@@ -73,7 +74,14 @@ let pokemonRepository = (function () {
     const query = searchInput.value;
     filterPokemonList(query);
   });
+
+  // Add event listener to the clear button
+  const clearButton = document.querySelector('#clear-search');
+  clearButton.addEventListener('click', function() {
+    searchInput.value = ''; // Clear the search input field
+  });
     
+  // pokemon list
   function addListItem(pokemon) {
     let pokemonUl = document.querySelector('.pokemon-list');
     let pokemonLi = document.createElement('li');
@@ -155,7 +163,7 @@ function getManualTextColor(type) {
     dragon: 'white',
     dark: 'white',
     steel: 'black',
-    fairy: 'black'
+    fairy: 'black',
   };
   return typeTextColorMap[type] || 'black'; // Default to black if type not found
 }
