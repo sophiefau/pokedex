@@ -68,14 +68,14 @@ let pokemonRepository = (function () {
         pokemon.imageUrlBack,
         'Type: ' + pokemon.types.join(', '),
         'Abilities: ' + pokemon.abilities.join(', '),
-        'Height: ' + pokemon.height,
-        'Weight: ' + pokemon.weight,
+        'Height: ' + pokemon.height + ' dm',
+        'Weight: ' + pokemon.weight + ' hg',
       );
       console.log(pokemon);
     });
   }
 
-  function showModal(title, imageFront, imageBack, types, abilities, height, weight) {
+  function showModal(title, imageFront, imageBack, types, abilities, height, weight, forms) {
     
     modalContainer.innerHTML = '';
     modalContainer.classList.add('is-visible');
@@ -126,10 +126,14 @@ let pokemonRepository = (function () {
     let p4 = document.createElement('p');
     p4.textContent = weight;
 
+    let p5 = document.createElement('p');
+    p5.textContent = forms;
+
     modalText.appendChild(p1);
     modalText.appendChild(p2);
     modalText.appendChild(p3);
     modalText.appendChild(p4);
+    modalText.appendChild(p5);
     modalContent.appendChild(modalText);
 
     modal.appendChild(modalContent);

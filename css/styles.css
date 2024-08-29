@@ -88,7 +88,7 @@ body{
   box-sizing: border-box;
   background: #fff;
   border-radius: 12px;
-  padding: 15px;
+  padding: 30px;
   width: 100%;
   max-width: 600px;
 }
@@ -119,13 +119,17 @@ body{
   color: var(--text-color)
 }
 
+.pokemon-img img{
+  width: 300px;
+}
+
 .pokemon-text{
   text-align: left;
   color: var(--background-color);
 }
 
 .pokemon-text p{
-  font-size: 22px;
+  font-size: 20px;
   margin-top: 0;
 }
 
@@ -153,6 +157,10 @@ body{
 
   .pokemon-img{
     grid-template-columns: 1fr;
+  }
+
+  .pokemon-img img{
+    margin: auto;
   }
 
   .pokemon-text {
