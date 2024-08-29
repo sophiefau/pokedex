@@ -52,34 +52,31 @@ let pokemonRepository = (function () {
     let button = document.createElement('button');
     button.innerText = pokemon.name;
     button.classList.add('button-class');
-
-    // loaddetails before displaying the buttonImg
+  
     loadDetails(pokemon).then(function() {
       let buttonImg = document.createElement('img');
       buttonImg.src = pokemon.imageUrlFront;
       buttonImg.alt = pokemon.name;
-      buttonImg.classList.add('button-img'); 
+      buttonImg.classList.add('button-img');
       button.appendChild(buttonImg);
-
-
-    // Set the background color based on Pokémon types
-    if (pokemon.types.length > 1) {
-      let color1 = getTypeColor(pokemon.types[0]);
-      let color2 = getTypeColor(pokemon.types[1]);
-      button.style.background = `linear-gradient(to right, ${color1} 50%, ${color2} 50%)`;
-      button.style.background = backgroundColor;
-      // Use the first color to determine the text color
-      button.style.color = getTextColor(color1);
-  } else {
-    backgroundColor = getTypeColor(pokemon.types[0]);
-    button.style.backgroundColor = backgroundColor;
-    button.style.color = getTextColor(backgroundColor);
-  }
-
+  
+      // Set the background color based on Pokémon types
+      if (pokemon.types.length > 1) {
+        let color1 = getTypeColor(pokemon.types[0]);
+        let color2 = getTypeColor(pokemon.types[1]);
+        button.style.background = `linear-gradient(to right, ${color1} 50%, ${color2} 50%)`;
+        // Use the first type to determine the text color
+        button.style.color = getManualTextColor(pokemon.types[0]);
+      } else {
+        let backgroundColor = getTypeColor(pokemon.types[0]);
+        button.style.backgroundColor = backgroundColor;
+        button.style.color = getManualTextColor(pokemon.types[0]);
+      }
+  
       button.addEventListener('click', function () {
         showDetails(pokemon);
       });
-
+  
       pokemonLi.appendChild(button);
       pokemonUl.appendChild(pokemonLi);
     }).catch(function (e) {
@@ -91,16 +88,16 @@ let pokemonRepository = (function () {
     const typeColors = {
       normal: '#A8A77A',
       fire: '#EE8130',
-      water: '#6390F0',
+      water: '#3c73c4',
       electric: '#F7D02C',
-      grass: '#7AC74C',
+      grass: '#30a85d',
       ice: '#96D9D6',
       fighting: '#C22E28',
       poison: '#A33EA1',
       ground: '#E2BF65',
       flying: '#A98FF3',
       psychic: '#F95587',
-      bug: '#A6B91A',
+      bug: '#89a830',
       rock: '#B6A136',
       ghost: '#735797',
       dragon: '#6F35FC',
@@ -108,28 +105,31 @@ let pokemonRepository = (function () {
       steel: '#B7B7CE',
       fairy: '#D685AD',
     };
-    return typeColors[type]
+    return typeColors[type] 
 }
 
-function getLuminance(hex) {
-  // Convert hex to RGB
-  const rgb = parseInt(hex.slice(1), 16); 
-  const r = (rgb >> 16) & 0xff;
-  const g = (rgb >>  8) & 0xff;
-  const b = (rgb >>  0) & 0xff;
-
-  // Calculate relative luminance
-  const a = [r, g, b].map(function (v) {
-    v /= 255;
-    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
-  });
-
-  return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
-}
-
-function getTextColor(backgroundColor) {
-  const luminance = getLuminance(backgroundColor);
-  return luminance > 0.5 ? 'black' : 'white';
+function getManualTextColor(type) {
+  const typeTextColorMap = {
+    normal: 'black',
+    fire: 'black',
+    water: 'white',
+    electric: 'black',
+    grass: 'white',
+    ice: 'black',
+    fighting: 'white',
+    poison: 'white',
+    ground: 'black',
+    flying: 'black',
+    psychic: 'black',
+    bug: 'black',
+    rock: 'black',
+    ghost: 'black',
+    dragon: 'white',
+    dark: 'white',
+    steel: 'black',
+    fairy: 'black'
+  };
+  return typeTextColorMap[type] || 'black'; // Default to black if type not found
 }
 
     function showDetails(pokemon) {
