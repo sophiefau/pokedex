@@ -39,18 +39,17 @@ body{
 }
 
 .button-class{
-  display: inline-block;
+  text-align: right;
   background-color: var(--button-color);
   color: var(--text-color);
   border: none;
   border-bottom: 2px solid var(--button-border-color);
-  width: 180px;
-  margin: 8px 20px;
-  padding: 10px 12px;
+  width: 220px;
+  margin: 8px 10px;
+  padding: 10px 22px;
   border-radius: 25px;
-  text-align: center;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 18px;
   text-transform: capitalize;
   letter-spacing: 2px;
   cursor: pointer;
@@ -61,6 +60,12 @@ body{
 .button-class:focus{
   transform: scale(1.05);
   cursor: pointer;
+}
+
+.button-img{
+  width: 80px;
+  display: flex;
+  justify-content: left;
 }
 
 #modal-container {
@@ -161,6 +166,7 @@ body{
 
   .pokemon-img img{
     margin: auto;
+    width: 200px;
   }
 
   .pokemon-text {

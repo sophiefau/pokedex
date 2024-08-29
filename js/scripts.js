@@ -11,20 +11,6 @@ let pokemonRepository = (function () {
    function getAll() {
     return pokemonList;
   }
-    
-  function addListItem(pokemon) {
-    let pokemonUl = document.querySelector('.pokemon-list');
-    let pokemonLi = document.createElement('li');
-    let button = document.createElement('button');
-    button.innerText = pokemon.name;
-    button.classList.add('button-class');
-    button.addEventListener('click', function () {
-      showDetails(pokemon);
-    });
-    
-    pokemonLi.appendChild(button);
-    pokemonUl.appendChild(pokemonLi);
-  }
 
   function loadList() {
     return fetch(apiUrl).then(function (response) {
@@ -50,13 +36,39 @@ let pokemonRepository = (function () {
     }).then(function (details) {
       // Add the details to the item
       item.imageUrlFront = details.sprites.front_default; 
-      item.imageUrlBack = details.sprites.back_default;       // || 'path/to/placeholder.png';
+      item.imageUrlBack = details.sprites.back_default;  
       item.types = details.types.map(type => type.type.name); // Extract the names of types
       item.abilities = details.abilities.map(abilityInfo => abilityInfo.ability.name); // Extract the abilities
       item.height = details.height;
       item.weight = details.weight;
     }).catch(function (e) {
       console.error(e);
+    });
+  }
+    
+  function addListItem(pokemon) {
+    let pokemonUl = document.querySelector('.pokemon-list');
+    let pokemonLi = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('button-class');
+
+    // loaddetails before displaying the buttonImg
+    loadDetails(pokemon).then(function() {
+      let buttonImg = document.createElement('img');
+      buttonImg.src = pokemon.imageUrlFront;
+      buttonImg.alt = pokemon.name;
+      buttonImg.classList.add('button-img'); 
+      button.appendChild(buttonImg);
+
+      button.addEventListener('click', function () {
+        showDetails(pokemon);
+      });
+
+      pokemonLi.appendChild(button);
+      pokemonUl.appendChild(pokemonLi);
+    }).catch(function (e) {
+      console.error('Error loading Pokémon details:', e);
     });
   }
 
