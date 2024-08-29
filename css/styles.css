@@ -2,7 +2,7 @@
   --background-color:#070236; 
   --text-color: #fafaf6;
   --button-color: #4c74af;
-  --button-border-color:#5e4905;
+  --button-border-color:#726744;
 }
 
 * {
@@ -10,6 +10,26 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+
+/* bug: '#94bc4a',
+dark: '#736c75',
+dragon: '#6a7baf',
+electric: '#e5c531',
+fairy: '#e397d1',
+fighting: '#cb5f48',
+fire: '#ea7a3c',
+flying: '#7da6de',
+ghost: '#846ab6',
+grass: '#71c558',
+ground: '#cc9f4f',
+ice: '#70cbd4',
+normal: '#aab09f',
+poison: '#b468b7',
+psychic: '#e5709b',
+rock: '#b2a061',
+steel: '#89a1b0',
+water: '#539ae2', */
 
 body{
   background-color:var(--background-color);
@@ -40,16 +60,16 @@ body{
 
 .button-class{
   text-align: right;
-  background-color: var(--button-color);
-  color: var(--text-color);
   border: none;
   border-bottom: 2px solid var(--button-border-color);
+  color: var(--text-color);
   width: 220px;
   margin: 8px 10px;
   padding: 10px 22px;
   border-radius: 25px;
   text-decoration: none;
   font-size: 18px;
+  font-weight: 700;
   text-transform: capitalize;
   letter-spacing: 2px;
   cursor: pointer;
@@ -130,6 +150,7 @@ body{
 
 .pokemon-text{
   text-align: left;
+  margin-top: 10px;
   color: var(--background-color);
 }
 

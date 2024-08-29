@@ -61,6 +61,21 @@ let pokemonRepository = (function () {
       buttonImg.classList.add('button-img'); 
       button.appendChild(buttonImg);
 
+
+    // Set the background color based on Pokémon types
+    if (pokemon.types.length > 1) {
+      let color1 = getTypeColor(pokemon.types[0]);
+      let color2 = getTypeColor(pokemon.types[1]);
+      button.style.background = `linear-gradient(to right, ${color1} 50%, ${color2} 50%)`;
+      button.style.background = backgroundColor;
+      // Use the first color to determine the text color
+      button.style.color = getTextColor(color1);
+  } else {
+    backgroundColor = getTypeColor(pokemon.types[0]);
+    button.style.backgroundColor = backgroundColor;
+    button.style.color = getTextColor(backgroundColor);
+  }
+
       button.addEventListener('click', function () {
         showDetails(pokemon);
       });
@@ -71,6 +86,51 @@ let pokemonRepository = (function () {
       console.error('Error loading Pokémon details:', e);
     });
   }
+
+  function getTypeColor(type) {
+    const typeColors = {
+      normal: '#A8A77A',
+      fire: '#EE8130',
+      water: '#6390F0',
+      electric: '#F7D02C',
+      grass: '#7AC74C',
+      ice: '#96D9D6',
+      fighting: '#C22E28',
+      poison: '#A33EA1',
+      ground: '#E2BF65',
+      flying: '#A98FF3',
+      psychic: '#F95587',
+      bug: '#A6B91A',
+      rock: '#B6A136',
+      ghost: '#735797',
+      dragon: '#6F35FC',
+      dark: '#705746',
+      steel: '#B7B7CE',
+      fairy: '#D685AD',
+    };
+    return typeColors[type]
+}
+
+function getLuminance(hex) {
+  // Convert hex to RGB
+  const rgb = parseInt(hex.slice(1), 16); 
+  const r = (rgb >> 16) & 0xff;
+  const g = (rgb >>  8) & 0xff;
+  const b = (rgb >>  0) & 0xff;
+
+  // Calculate relative luminance
+  const a = [r, g, b].map(function (v) {
+    v /= 255;
+    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  });
+
+  return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+}
+
+function getTextColor(backgroundColor) {
+  const luminance = getLuminance(backgroundColor);
+  return luminance > 0.5 ? 'black' : 'white';
+}
 
     function showDetails(pokemon) {
     return loadDetails(pokemon).then(function() {
