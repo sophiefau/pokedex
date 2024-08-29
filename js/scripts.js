@@ -169,20 +169,33 @@ function getManualTextColor(type) {
   return typeTextColorMap[type] || 'black'; // Default to black if type not found
 }
 
-    function showDetails(pokemon) {
-    return loadDetails(pokemon).then(function() {
-        showModal(
-        pokemon.name,
-        pokemon.imageUrlFront,
-        pokemon.imageUrlBack,
-        'Type: ' + pokemon.types.join(', '),
-        'Abilities: ' + pokemon.abilities.join(', '),
-        'Height: ' + pokemon.height + ' dm',
-        'Weight: ' + pokemon.weight + ' hg',
-      );
-      console.log(pokemon);
-    });
-  }
+function showDetails(pokemon) {
+  return loadDetails(pokemon).then(function() {
+    let heightComment = ''; // Initialize an empty string for the comment
+    let weightComment = ''; 
+
+    // add a comment if Pokemon is huge or heavy
+    if (pokemon.height >= 20) {
+      heightComment = ' (This Pokémon is huge!!)';
+    }
+    
+    if (pokemon.weight >= 1000) {
+      weightComment = ' (Wow, that\'s heavy!)'; 
+    }
+
+    showModal(
+      pokemon.name,
+      pokemon.imageUrlFront,
+      pokemon.imageUrlBack,
+      'Type: ' + pokemon.types.join(', '),
+      'Abilities: ' + pokemon.abilities.join(', '),
+      'Height: ' + pokemon.height + ' dm' + heightComment,
+      'Weight: ' + pokemon.weight + ' hg' + weightComment
+    );
+
+    console.log(pokemon);
+  });
+}
 
   function showModal(title, imageFront, imageBack, types, abilities, height, weight, forms) {
     

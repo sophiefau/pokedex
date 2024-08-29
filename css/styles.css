@@ -3,6 +3,7 @@
   --text-color: #fafaf6;
   --button-color: #2381bb;
   --button-border-color:#726744;
+  --text-color-yellow:#e1a71f;
 }
 
 * {
@@ -193,7 +194,7 @@ footer{
 }
 
 #back-to-top:hover {
-  background-color: var(--button-color)
+  text-decoration: underline;
 }
 
 @media (max-width: 992px) {
@@ -241,10 +242,16 @@ footer{
 
   .pokemon-img img{
     margin: auto;
-    width: 200px;
+    width: 170px;
   }
 
   .pokemon-text {
-      padding: 15px; /* Adjust padding for smaller screens */
+    padding: 10px; 
+  }
+
+  .pokemon-text p{
+    padding: 10px; 
+    font-size: 18px;
+    line-height: 1em;
   }
 }
