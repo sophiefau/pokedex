@@ -177,6 +177,25 @@ header{
   margin-top: 0;
 }
 
+footer{
+  margin: 20px 10%;
+  width: 100%;
+}
+
+#back-to-top {
+  position: fixed; 
+  bottom: 8px;
+  color: var(--text-color);
+  width: 100%;
+  text-align: center;
+  text-decoration: none; 
+  font-size: 14px; 
+}
+
+#back-to-top:hover {
+  background-color: var(--button-color)
+}
+
 @media (max-width: 992px) {
   .pokemon-list{
     grid-template-columns: repeat(3, 1fr);
@@ -202,6 +221,7 @@ header{
     justify-content: center;
     width: 100%;
     margin: auto;
+    margin-bottom: 10px;
   }
 
   .search-container {

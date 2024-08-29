@@ -1,7 +1,7 @@
 let pokemonRepository = (function () {
 
   let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=252';
   let modalContainer = document.querySelector('#modal-container');
 
   function add(pokemon) {
@@ -79,6 +79,7 @@ let pokemonRepository = (function () {
   const clearButton = document.querySelector('#clear-search');
   clearButton.addEventListener('click', function() {
     searchInput.value = ''; // Clear the search input field
+    filterPokemonList('');
   });
     
   // pokemon list
@@ -266,6 +267,22 @@ function getManualTextColor(type) {
       hideModal();
     }
   });
+
+  // Show or hide the "Back to Top" button based on scroll position
+window.addEventListener('scroll', function() {
+  const backToTopButton = document.getElementById('back-to-top');
+  if (window.scrollY > 200) { // Show the button after scrolling down 200px
+    backToTopButton.style.display = 'block';
+  } else {
+    backToTopButton.style.display = 'none';
+  }
+});
+
+// Smooth scroll to top when the button is clicked
+document.getElementById('back-to-top').addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
   return {
     add: add,
