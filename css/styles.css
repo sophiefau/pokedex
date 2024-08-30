@@ -190,7 +190,25 @@ header{
 footer{
   display: flex;
   justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 10px;
 }
+
+.footer-text{
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+.footer-text a{
+  color: var(--text-color-yellow);
+  text-decoration: none;
+}
+
+.footer-text a:hover{
+  text-decoration: underline;
+}
+
+
 
 #back-to-top {
   background-color: var(--background-color);

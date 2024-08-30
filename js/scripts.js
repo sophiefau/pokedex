@@ -11,19 +11,19 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
-  function showLoadingMessage(){
-    let loadingMessage = document.querySelector('.loading-text');
-    if (loadingMessage) {
-      loadingMessage.style.display = 'block';
-    }
-}
+    function showLoadingMessage(){
+      let loadingMessage = document.querySelector('.loading-text');
+      if (loadingMessage) {
+        loadingMessage.style.display = 'block';
+      }
+  }
 
-function hideLoadingMessage() {
-    let loadingMessage = document.querySelector('.loading-text');
-    if (loadingMessage) {
-      loadingMessage.style.display = 'none';
-    }
-}
+  function hideLoadingMessage() {
+      let loadingMessage = document.querySelector('.loading-text');
+      if (loadingMessage) {
+        loadingMessage.style.display = 'none';
+      }
+  }
 
   function loadList() {
     showLoadingMessage();
@@ -74,6 +74,11 @@ function hideLoadingMessage() {
 
   // search bar
   function filterPokemonList(query) {
+    showLoadingMessage();
+    let footer = document.querySelector('.footer-text');
+    footer.style.display = 'none';
+
+
     const allPokemons = pokemonRepository.getAll();
     const filteredPokemons = allPokemons.filter((pokemon) =>
       pokemon.name.toLowerCase().includes(query.toLowerCase())
@@ -92,6 +97,7 @@ function hideLoadingMessage() {
     } else {
       noResultsMessage.classList.remove("hidden"); // Show the error message
     }
+    hideLoadingMessage();
   }
 
   // Add an event listener to the search bar
@@ -106,6 +112,9 @@ function hideLoadingMessage() {
   clearButton.addEventListener("click", function () {
     searchInput.value = ""; // Clear the search input field
     filterPokemonList("");
+    
+    let footer = document.querySelector('.footer-text');
+    footer.style.display = 'none';
   });
 
   // pokemon list
