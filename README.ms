@@ -2,26 +2,26 @@
 
 ## Description
 
-This project is a simple web application that displays a list of Pokémons fetched from the PokéAPI. Users can click on a Pokémon to see its details in a modal. It's also possible to search for specific Pokémons through the search bar.
+This project is a simple web application displaying a list of Pokémons, fetched from the PokéAPI. 
+Users can click on a Pokémon to see its details in a modal. 
+It's also possible to search for specific Pokémons through the search bar.
 
 ## Features
 
 - Fetches a list of Pokémon from the PokéAPI
-- Displays a list of Pokémons
-- Filters Pokémons through the search field
+- Displays a list of Pokémons with their image and types' colors
 - Shows details of each Pokémon on a modal upon clicking
+- Possibility to search a specific Pokémon using the search field
 
 ## Technologies
 
 - HTML
 - CSS 
-- Bootstrap
 - JavaScript
-- jQuery
 - Fetch API
+- EsLint
 
 ## Dependencies
 
-- Pokémon API: https://pokeapi.co/api/v2/pokemon/?limit=1302
-- jQuery: https://code.jquery.com/jquery-3.3.1.min.js
-- Bootstrap: https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js
+This project was made during my Full-Stack Wen development course at CareerFoundry as part of my achievements.
+> link to Pokémon API: https://pokeapi.co/api/v2/pokemon/?limit=1302
