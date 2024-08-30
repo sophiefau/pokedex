@@ -212,7 +212,7 @@ let pokemonRepository = (function () {
     types,
     abilities,
     height,
-    weight,
+    weight
   ) {
     modalContainer.innerHTML = "";
     modalContainer.classList.add("is-visible");
@@ -263,14 +263,10 @@ let pokemonRepository = (function () {
     let p4 = document.createElement("p");
     p4.textContent = weight;
 
-    let p5 = document.createElement("p");
-    p5.textContent = forms;
-
     modalText.appendChild(p1);
     modalText.appendChild(p2);
     modalText.appendChild(p3);
     modalText.appendChild(p4);
-    modalText.appendChild(p5);
     modalContent.appendChild(modalText);
 
     modal.appendChild(modalContent);
