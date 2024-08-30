@@ -11,7 +11,7 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
-    function showLoadingMessage(){
+  function showLoadingMessage(){
       let loadingMessage = document.querySelector('.loading-text');
       if (loadingMessage) {
         loadingMessage.style.display = 'block';
@@ -65,11 +65,25 @@ let pokemonRepository = (function () {
         ); // Extract the abilities
         item.height = details.height;
         item.weight = details.weight;
+        return loadFlavorText(item);
       })
       .catch(function (e) {
         hideLoadingMessage();
         console.error(e);
       });
+  }
+
+  //get the FlavorText in API
+  function loadFlavorText(item) {
+    let speciesUrl = item.detailsUrl.replace('/pokemon/', '/pokemon-species/');
+    return fetch(speciesUrl).then(function (response) {
+        return response.json();
+    }).then(function (details) {
+        let englishFlavorText = details.flavor_text_entries.find(entry => entry.language.name === 'en');
+        item.flavorText = englishFlavorText ? englishFlavorText.flavor_text : 'No flavor text available.';//ensures english only flavor text is loaded
+    }).catch(function (e) {
+        console.error(e);
+    });
   }
 
   // search bar
@@ -202,19 +216,19 @@ document.querySelectorAll('.menu a').forEach(link => {
 
   function getTypeColor(type) {
     const typeColors = {
-      normal: "#A8A77A",
+      normal: "#adb5a1",
       fire: "#EE8130",
       water: "#3c73c4",
-      electric: "#F7D02C",
-      grass: "#30a85d",
+      electric: "#f5c52e",
+      grass: "#3ea063",
       ice: "#96D9D6",
       fighting: "#C22E28",
       poison: "#A33EA1",
-      ground: "#E2BF65",
-      flying: "#A98FF3",
+      ground: "#d1aa4a",
+      flying: "#8cbbe9",
       psychic: "#F95587",
       bug: "#89a830",
-      rock: "#B6A136",
+      rock: "#a4985c",
       ghost: "#735797",
       dragon: "#6F35FC",
       dark: "#705746",
@@ -269,7 +283,8 @@ document.querySelectorAll('.menu a').forEach(link => {
         `Type: ${pokemon.types.join(", ")}`,
         `Abilities: ${pokemon.abilities.join(", ")}`,
         `Height: ${pokemon.height} dm${heightComment}`,
-        `Weight: ${pokemon.weight} hg${weightComment}`
+        `Weight: ${pokemon.weight} hg${weightComment}`,
+        `"${pokemon.flavorText}"`
       );
 
       console.log(pokemon);
@@ -283,7 +298,8 @@ document.querySelectorAll('.menu a').forEach(link => {
     types,
     abilities,
     height,
-    weight
+    weight,
+    flavorText
   ) {
     modalContainer.innerHTML = "";
     modalContainer.classList.add("is-visible");
@@ -334,10 +350,15 @@ document.querySelectorAll('.menu a').forEach(link => {
     let p4 = document.createElement("p");
     p4.textContent = weight;
 
+    let p5 = document.createElement("p");
+    p5.textContent = flavorText;
+    p5.classList.add("pokemon-about")
+
     modalText.appendChild(p1);
     modalText.appendChild(p2);
     modalText.appendChild(p3);
     modalText.appendChild(p4);
+    modalText.appendChild(p5);
     modalContent.appendChild(modalText);
 
     modal.appendChild(modalContent);

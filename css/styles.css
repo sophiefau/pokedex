@@ -4,6 +4,7 @@
   --button-color: #2381bb;
   --button-border-color:#726744;
   --text-color-yellow:#e1a71f;
+  --text-color-grey:#6a6863;
 }
 
 * {
@@ -87,8 +88,6 @@ header{
 }
 
 .menu{
-  display: grid;
-  grid-template-columns: repeat(18, 1fr);
   align-content: center;
   list-style: none;
   margin: 0;
@@ -107,13 +106,13 @@ header{
 }
 
 .normal{
-  color: #A8A77A;
+  color: #adb5a1;
 }
 .fire{
   color:#EE8130;
 }
 .water{
-  color: #3c73c4;
+  color: #4c88e2;
 }
 .electric{
   color: #F7D02C;
@@ -125,16 +124,16 @@ header{
   color: #96D9D6;
 }
 .fighting{
-  color: #C22E28;
+  color: #cb524d;
 }
 .poison{
-  color: #A33EA1;
+  color: #b465b2;
 }
 .ground{
-  color: #E2BF65;
+  color: #d1aa4a;
 }
 .flying{
-  color:#A98FF3;
+  color:#8cbbe9;
 }
 .psychic{
   color:#F95587;
@@ -143,16 +142,16 @@ header{
   color:#89a830;
 }
 .rock{
-  color:#B6A136;
+  color:#bfb067;
 }
 .ghost{
-  color:#735797;
+  color:#857a94;
 }
 .dragon{
-  color:#6F35FC;
+  color:#8d65f3;
 }
 .dark{
-  color:#705746;
+  color:#b08d76;
 }
 .steel{
   color:#B7B7CE;
@@ -268,6 +267,14 @@ header{
 .pokemon-text p{
   font-size: 20px;
   margin-top: 0;
+  line-height: 1.5em;
+}
+
+.pokemon-about{
+  padding: 15px;
+  font-style: italic;
+  color: var(--text-color-grey);
+  text-align: center;
 }
 
 footer{
@@ -311,10 +318,16 @@ footer{
   .container{
     margin: 0 10%;
   }
+
+  .menu{
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 1200px) {
   .menu{
+    display: grid;
     grid-template-columns: repeat(11, 1fr);
   }
 }
@@ -325,6 +338,7 @@ footer{
   }
 
   .menu{
+    display: grid;
     grid-template-columns: repeat(11, 1fr);
   }
 }
@@ -334,6 +348,7 @@ footer{
     grid-template-columns: repeat(2, 1fr);
   }
   .menu{
+    display: grid;
     grid-template-columns: repeat(6, 1fr);
   }
 }
@@ -362,6 +377,7 @@ footer{
   }
 
   .menu{
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
   
@@ -378,13 +394,7 @@ footer{
     width: 170px;
   }
 
-  .pokemon-text {
-    padding: 10px; 
-  }
-
-  .pokemon-text p{
-    padding: 10px; 
-    font-size: 18px;
-    line-height: 1em;
+  .pokemon-text p{ 
+    font-size: 16px;
   }
 }

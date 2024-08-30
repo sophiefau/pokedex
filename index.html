@@ -26,16 +26,12 @@
       <form class="search-form">
         <input id="search" type="text" class="input" placeholder="  Search Pokémon" aria-label="Search">
         <button id="clear-search" class="clear-button">clear</button>
-        <p id="no-results-message" class="hidden error-message">No Pokémon found!</p>
       </form>
     </div>
   </header>
 
   <main>
     <div class="container">
-      <div class="loading">
-        <p class="loading-text">Loading Pokémons...</p>
-      </div>
 
       <nav>
         <div class="menu-container">
@@ -62,6 +58,10 @@
         </div>
       </nav>
       
+      <div class="loading">
+        <p class="loading-text">Loading Pokémons...</p>
+        <p id="no-results-message" class="hidden error-message">No Pokémon found!</p>
+      </div>
 
       <ul class="pokemon-list"></ul>
       <div id="modal-container">
