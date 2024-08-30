@@ -1,6 +1,6 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=252";
+  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=300";
   let modalContainer = document.querySelector("#modal-container");
 
   function add(pokemon) {
@@ -11,6 +11,7 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
+  // Loading Message
   function showLoadingMessage(){
       let loadingMessage = document.querySelector('.loading-text');
       if (loadingMessage) {
@@ -73,7 +74,7 @@ let pokemonRepository = (function () {
       });
   }
 
-  //get the FlavorText in API
+  // Get the FlavorText from API
   function loadFlavorText(item) {
     let speciesUrl = item.detailsUrl.replace('/pokemon/', '/pokemon-species/');
     return fetch(speciesUrl).then(function (response) {
@@ -86,12 +87,9 @@ let pokemonRepository = (function () {
     });
   }
 
-  // search bar
+  // Search bar
   function filterPokemonList(query) {
     showLoadingMessage();
-    let footer = document.querySelector('.footer-text');
-    footer.style.display = 'none';
-
 
     const allPokemons = pokemonRepository.getAll();
     const filteredPokemons = allPokemons.filter((pokemon) =>
@@ -173,7 +171,7 @@ document.querySelectorAll('.menu a').forEach(link => {
   });
 });
 
-  // pokemon list
+  // Pokemon list
   function addListItem(pokemon) {
     let pokemonUl = document.querySelector(".pokemon-list");
     let pokemonLi = document.createElement("li");
@@ -223,7 +221,7 @@ document.querySelectorAll('.menu a').forEach(link => {
       grass: "#3ea063",
       ice: "#96D9D6",
       fighting: "#C22E28",
-      poison: "#A33EA1",
+      poison: "#a33cad",
       ground: "#d1aa4a",
       flying: "#8cbbe9",
       psychic: "#F95587",
@@ -235,7 +233,7 @@ document.querySelectorAll('.menu a').forEach(link => {
       steel: "#B7B7CE",
       fairy: "#D685AD",
     };
-    return typeColors[type];
+    return typeColors[type] || "grey"; // Default to grey if type not found
   }
 
   function getManualTextColor(type) {
@@ -267,7 +265,7 @@ document.querySelectorAll('.menu a').forEach(link => {
       let heightComment = ""; // Initialize an empty string for the comment
       let weightComment = "";
 
-      // add a comment if Pokemon is huge or heavy
+      // Add a comment if Pokemon is huge or heavy
       if (pokemon.height >= 20) {
         heightComment = " (This Pokémon is huge!!)";
       }
@@ -402,6 +400,16 @@ document.querySelectorAll('.menu a').forEach(link => {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+
+  // show the footer only when user scroll down
+  window.addEventListener('scroll', function () {
+    const footer = document.querySelector('footer');
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      footer.style.display = 'block'; // Show the footer
+    } else {
+      footer.style.display = 'none'; // Hide the footer
+    }
+  });
 
   return {
     add: add,

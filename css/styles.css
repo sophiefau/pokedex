@@ -83,7 +83,6 @@ header{
 
 .menu-container{
   margin: auto;
-  margin-bottom: 30px;
   max-width: 1200px;
 }
 
@@ -278,6 +277,18 @@ header{
 }
 
 footer{
+  display: none; /* Hide the footer initially */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--background-color); 
+  text-align: center;
+  padding: 10px;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.container-backtotop{
   display: flex;
   justify-content: center;
   margin-top: 50px;
@@ -322,6 +333,10 @@ footer{
   .menu{
     display: flex;
     justify-content: space-between;
+  }
+
+  .menu a{
+    font-size: 17px;
   }
 }
 
