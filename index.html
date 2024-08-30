@@ -21,10 +21,10 @@
       <img src="img/logopokedex-trans-small.png"
         alt="logo for the pokedex showing a cute pokemon and a pokeball in the background">
     </div>
-    
+
     <div class="search-container">
       <form class="search-form">
-        <input id="search" type="text" class="input" placeholder="  Search Pokémon" aria-label="Search"/>
+        <input id="search" type="text" class="input" placeholder="  Search Pokémon" aria-label="Search">
         <button id="clear-search" class="clear-button">clear</button>
         <p id="no-results-message" class="hidden error-message">No Pokémon found!</p>
       </form>
@@ -33,7 +33,9 @@
 
   <main>
     <div class="container">
-      <div class="loading"><p class="loading-text">Loading Pokémon...</p></div>
+      <div class="loading">
+        <p class="loading-text">Loading Pokémons...</p>
+      </div>
       <ul class="pokemon-list"></ul>
       <div id="modal-container">
       </div>
@@ -43,7 +45,7 @@
   <footer>
     <a href="#" id="back-to-top" title="Back to top">↑ Back to Top</a>
   </footer>
-  
+
   <script src="js/promise-polyfill.js"></script>
   <script src="js/fetch-polyfill.js"></script>
   <script src="js/scripts.js"></script>

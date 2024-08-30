@@ -188,16 +188,18 @@ header{
 }
 
 footer{
-  margin: 20px 10%;
-  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 #back-to-top {
+  background-color: var(--background-color);
+  opacity: 0.8;
+  border-radius: 5%;
+  width: 100px;
   position: fixed; 
-  bottom: 8px;
+  bottom: 0;
   color: var(--text-color);
-  width: 100%;
-  text-align: center;
   text-decoration: none; 
   font-size: 15px; 
 }
