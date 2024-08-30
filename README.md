@@ -4,16 +4,17 @@
 
 This project is a simple web application displaying a list of Pokémon, fetched from the PokéAPI.<br> 
 Users can fitler the Pokémon by types, and click on a Pokémon to see its details in a modal.
-It's also possible to search for specific Pokémon through the search bar.
+It is also possible to search for specific Pokémon through the search bar.
 
 ## Features
 
 - Fetches a list of 300 Pokémon from the PokéAPI.
 - Displays a list of Pokémons with their image and type color(s).
 - Allows searching for a specific Pokémon using the search field.
-- Organizes Pokémon by types.
-- Shows details of each Pokémon on a modal upon clicking.
-- Comments on huge or heavy Pokémon.
+- Organizes Pokémon by type.
+- Shows details of each Pokémon in a modal upon clicking.
+- Includes comments on huge or heavy Pokémon.
+- Showcases a responsive design that adapts from big screens to mobile.
 
 ## Technologies
 
