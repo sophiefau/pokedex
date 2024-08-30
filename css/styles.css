@@ -121,7 +121,7 @@ header{
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 999; 
-  overflow: a vuto; 
+  overflow: auto; 
   display: grid;
   text-align: center;
 }
@@ -139,7 +139,7 @@ header{
 
 .modal-close {
   float: right;
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
   border: 0;
   background: none;
   color: #777;
@@ -190,7 +190,7 @@ footer{
   width: 100%;
   text-align: center;
   text-decoration: none; 
-  font-size: 14px; 
+  font-size: 15px; 
 }
 
 #back-to-top:hover {
