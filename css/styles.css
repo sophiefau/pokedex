@@ -48,6 +48,7 @@ header{
   width: 50px;
   border-radius: 12px;
   margin-left: 10px;
+  margin-top: 7px;
 }
 
 .clear-button:hover{
@@ -76,7 +77,88 @@ header{
 }
 
 .container{
-  margin: 40px 10%;
+  margin: 0 auto;
+}
+
+.menu-container{
+  margin: auto;
+  margin-bottom: 30px;
+  max-width: 1200px;
+}
+
+.menu{
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  align-content: center;
+  list-style: none;
+  margin: 0;
+  color: #fafaf6;
+}
+
+.menu a{
+  padding: 0 5px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  align-self: center;
+}
+
+.menu a:hover{
+  text-decoration: underline;
+}
+
+.normal{
+  color: #A8A77A;
+}
+.fire{
+  color:#EE8130;
+}
+.water{
+  color: #3c73c4;
+}
+.electric{
+  color: #F7D02C;
+}
+.grass{
+  color:#30a85d
+}
+.ice{
+  color: #96D9D6;
+}
+.fighting{
+  color: #C22E28;
+}
+.poison{
+  color: #A33EA1;
+}
+.ground{
+  color: #E2BF65;
+}
+.flying{
+  color:#A98FF3;
+}
+.psychic{
+  color:#F95587;
+}
+.bug{
+  color:#89a830;
+}
+.rock{
+  color:#B6A136;
+}
+.ghost{
+  color:#735797;
+}
+.dragon{
+  color:#6F35FC;
+}
+.dark{
+  color:#705746;
+}
+.steel{
+  color:#B7B7CE;
+}
+.fairy{
+  color:#D685AD;
 }
 
 .pokemon-list{
@@ -93,8 +175,9 @@ header{
   border-bottom: 2px solid var(--button-border-color);
   color: var(--text-color);
   width: 220px;
+  height: 105px;
   margin: 8px 10px;
-  padding: 10px 22px;
+  padding: 10px 18px;
   border-radius: 25px;
   text-decoration: none;
   font-size: 18px;
@@ -112,7 +195,7 @@ header{
 }
 
 .button-img{
-  width: 80px;
+  width: 90px;
   text-align: right;
 }
 
@@ -208,8 +291,6 @@ footer{
   text-decoration: underline;
 }
 
-
-
 #back-to-top {
   background-color: var(--background-color);
   opacity: 0.8;
@@ -226,9 +307,25 @@ footer{
   text-decoration: underline;
 }
 
-@media (max-width: 992px) {
+@media (min-width: 1201px){
+  .container{
+    margin: 0 10%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .menu{
+    grid-template-columns: repeat(11, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
   .pokemon-list{
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .menu{
+    grid-template-columns: repeat(11, 1fr);
   }
 }
 
@@ -236,9 +333,12 @@ footer{
   .pokemon-list{
     grid-template-columns: repeat(2, 1fr);
   }
+  .menu{
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
   header{
     flex-direction: column;
     justify-content: center;
@@ -259,6 +359,10 @@ footer{
     margin-top: 10px; 
     justify-content: center; 
     display: flex;
+  }
+
+  .menu{
+    grid-template-columns: repeat(3, 1fr);
   }
   
   .pokemon-list{

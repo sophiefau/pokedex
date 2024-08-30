@@ -117,6 +117,48 @@ let pokemonRepository = (function () {
     footer.style.display = 'none';
   });
 
+  // Function to filter Pokémon by type
+function filterByType(type) {
+  showLoadingMessage();
+
+  const allPokemons = pokemonRepository.getAll();
+  let filteredPokemons = [];
+
+  if (type === 'all') {
+    filteredPokemons = allPokemons;
+  } else {
+    filteredPokemons = allPokemons.filter(pokemon =>
+      pokemon.types.includes(type)
+    );
+  }
+
+  const pokemonUl = document.querySelector(".pokemon-list");
+  const noResultsMessage = document.querySelector("#no-results-message");
+
+  pokemonUl.innerHTML = ""; 
+  
+  if (filteredPokemons.length > 0) {
+    noResultsMessage.classList.add("hidden"); // Hide the error message
+    filteredPokemons.forEach(pokemon => {
+      addListItem(pokemon); // Add filtered Pokémon to the list
+    });
+  } else {
+    noResultsMessage.classList.remove("hidden"); // Show the error message
+  }
+  hideLoadingMessage();
+}
+
+// Add event listener for filter links
+document.querySelectorAll('.menu a').forEach(link => {
+  link.addEventListener('click', function (event) {
+    event.preventDefault();
+    const type = this.getAttribute('data-type');
+    document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
+    this.classList.add('active');
+    filterByType(type);
+  });
+});
+
   // pokemon list
   function addListItem(pokemon) {
     let pokemonUl = document.querySelector(".pokemon-list");

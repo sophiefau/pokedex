@@ -12,6 +12,7 @@ It's also possible to search for specific Pokémon through the search bar.
 - Displays a list of Pokémons with their image and type colors.
 - Shows details of each Pokémon on a modal upon clicking.
 - Allows searching for a specific Pokémon using the search field.
+- Comments on huge or heavy Pokémon.
 
 ## Technologies
 
