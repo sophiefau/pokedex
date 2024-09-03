@@ -1,12 +1,10 @@
 # Pokédex
 
-## Description
-
 This project is a simple web application displaying a list of Pokémon, fetched from the PokéAPI.<br> 
 Users can fitler the Pokémon by types, and click on a Pokémon to see its details in a modal.
 It is also possible to search for specific Pokémon through the search bar.
 
-## Features
+*Features:*
 
 - Fetches a list of 300 Pokémon from the PokéAPI.
 - Displays a list of Pokémons with their image and type color(s).
@@ -16,7 +14,7 @@ It is also possible to search for specific Pokémon through the search bar.
 - Includes comments on huge or heavy Pokémon.
 - Showcases a responsive design that adapts from big screens to mobile.
 
-## Technologies
+*Technologies used:*
 
 - HTML
 - CSS 
@@ -24,7 +22,7 @@ It is also possible to search for specific Pokémon through the search bar.
 - Fetch API
 - EsLint
 
-## Credits
+*Credits:*
 
 This project was created during my Full-Stack Web Development course at CareerFoundry as part of my achievements.<br> 
 It makes use of the PokéAPI, a free-to-use API for accessing Pokémon data, for educational purposes: [https://pokeapi.co/about](https://pokeapi.co/about). 
