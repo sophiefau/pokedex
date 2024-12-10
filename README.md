@@ -26,8 +26,8 @@ It is also possible to search for specific Pokémon through the search bar.
 
 # Web Preview
 
-(https://github.com/sophiefau/pokedex/blob/main/img/pokedex.png)
-(https://github.com/sophiefau/pokedex/blob/main/img/pokedex_webview.png)
+![Web preview for Pokédex](https://github.com/sophiefau/pokedex/blob/main/img/pokedex.png)
+![Web preview for Pokédex showing a specific Pokémon](https://github.com/sophiefau/pokedex/blob/main/img/pokedex_webview.png)
 
 # Credits
 
