@@ -24,12 +24,12 @@ It is also possible to search for specific Pokémon through the search bar.
 - Fetch API
 - EsLint
 
-# Web Preview
+### Web Preview
 
 ![Web preview for Pokédex](https://github.com/sophiefau/pokedex/blob/main/img/pokedex.png)
 ![Web preview for Pokédex showing a specific Pokémon](https://github.com/sophiefau/pokedex/blob/main/img/pokedex_webview.png)
 
-# Credits
+### Credits
 
 This project was created during my Full-Stack Web Development course at CareerFoundry as part of my achievements.<br> 
 It makes use of the PokéAPI, a free-to-use API for accessing Pokémon data, for educational purposes: [https://pokeapi.co/about](https://pokeapi.co/about). 
