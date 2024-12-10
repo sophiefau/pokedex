@@ -4,6 +4,8 @@ This project is a simple web application displaying a list of Pokémon, fetched 
 Users can fitler the Pokémon by types, and click on a Pokémon to see its details in a modal.
 It is also possible to search for specific Pokémon through the search bar.
 
+→ To see the app live: https://sophiefau.github.io/pokedex/
+
 ## Features
 
 - Fetches a list of 300 Pokémon from the PokéAPI.
