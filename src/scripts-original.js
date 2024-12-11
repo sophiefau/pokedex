@@ -126,6 +126,13 @@ let pokemonRepository = (function () {
     filterPokemonList(query);
   });
 
+  // Add an event listener to the "Go" button
+  const goButton = document.querySelector("#search-go");
+  goButton.addEventListener("click", function () {
+    const query = searchInput.value; // Get the search input value
+    filterPokemonList(query); // Call the search function
+  });
+
   // Add event listener to the clear button
   const clearButton = document.querySelector("#clear-search");
   clearButton.addEventListener("click", function () {
@@ -410,15 +417,15 @@ let pokemonRepository = (function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-  // show the footer only when user scroll down
-  window.addEventListener("scroll", function () {
-    const footer = document.querySelector("footer");
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-      footer.style.display = "block"; // Show the footer
-    } else {
-      footer.style.display = "none"; // Hide the footer
-    }
-  });
+  // // show the footer only when user scroll down
+  // window.addEventListener("scroll", function () {
+  //   const footer = document.querySelector("footer");
+  //   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+  //     footer.style.display = "block"; // Show the footer
+  //   } else {
+  //     footer.style.display = "none"; // Hide the footer
+  //   }
+  // });
 
   return {
     add: add,

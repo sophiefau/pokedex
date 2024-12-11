@@ -10,9 +10,9 @@
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Noto+Serif:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="dist/styles.min.css">
+  <link rel="stylesheet" href="dist/min.styles.css">
 
-  <title>Sophie's Pokédex</title>
+  <title>Sophiefau's Pokédex</title>
 </head>
 
 <body>
@@ -25,7 +25,10 @@
     <div class="search-container">
       <form class="search-form">
         <input id="search" type="text" class="input" placeholder="  Search Pokémon" aria-label="Search">
-        <button id="clear-search" class="clear-button">clear</button>
+        <div class="search-btn">
+          <button id="search-go" type="button" class="go-button">Go !</button>
+          <button id="clear-search" class="clear-button">clear</button>
+        </div>
       </form>
     </div>
   </header>
@@ -33,8 +36,8 @@
   <main>
     <div class="container">
 
-      <nav>
-        <div class="menu-container">
+      <div class="menu-container">
+        <nav>
           <ul class="menu" id="menu">
             <li><a href="#" class="bug" data-type="bug">Bug</a></li>
             <li><a href="#" class="dark" data-type="dark">Dark</a></li>
@@ -55,8 +58,8 @@
             <li><a href="#" class="steel" data-type="steel">Steel</a></li>
             <li><a href="#" class="water" data-type="water">Water</a></li>
           </ul>
-        </div>
-      </nav>
+        </nav>
+      </div>
 
       <div class="loading">
         <p class="loading-text">Loading Pokémons...</p>
@@ -67,11 +70,11 @@
       <div id="modal-container">
       </div>
     </div>
-
-    <div class="container-backtotop">
-      <a href="#" id="back-to-top" title="Back to top">↑ Back to Top</a>
-    </div>
   </main>
+
+  <div class="container-backtotop">
+    <a href="#" id="back-to-top" title="Back to top">↑ Back to Top</a>
+  </div>
 
   <footer>
     <p class="footer-text"> Pokémon is a trademark and franchise of The Pokémon Company.
@@ -84,7 +87,7 @@
 
   <script src="js/promise-polyfill.js"></script>
   <script src="js/fetch-polyfill.js"></script>
-  <script src="dist/scripts.min.js"></script>
+  <script src="dist/min.scripts.js"></script>
 </body>
 
 </html>

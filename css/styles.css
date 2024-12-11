@@ -1,36 +1,8 @@
-*,
-.modal {
-  box-sizing: border-box;
-}
-.modal h1,
-body {
-  text-align: center;
-}
-.button-class,
-.modal h1 {
-  text-transform: capitalize;
-}
-#modal-container,
-.hidden,
-footer {
-  display: none;
-}
-#back-to-top,
-footer {
-  background-color: var(--background-color);
-  position: fixed;
-  bottom: 0;
-}
-#back-to-top,
-.button-class,
-.footer-text a,
-.menu a {
-  text-decoration: none;
-}
 :root {
   --background-color: #070236;
   --text-color: #fafaf6;
   --button-color: #2381bb;
+  --button-go-color: #fe2c2c;
   --button-border-color: #726744;
   --text-color-yellow: #e1a71f;
   --text-color-grey: #6a6863;
@@ -38,29 +10,67 @@ footer {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
+  display: flex;
+  flex-direction: column;
   background-color: var(--background-color);
   font-family: Nunito, sans-serif;
   font-weight: 500;
   line-height: 2;
   padding: 20px;
   margin: 0 auto;
+  height: 100%;
+  min-height: 100vh;
 }
+/* header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   margin: 20px 10%;
+  padding: 0 3%;
 }
 .logo {
   max-width: 180px;
   min-width: 150px;
 }
+.search-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
 .input {
   width: 200px;
   height: 32px;
   border-radius: 8px;
+}
+.search-btn {
+  display: flex;
+  gap: 10px;
+}
+.go-button {
+  background-color: var(--background-color);
+  color: var(--button-go-color);
+  border: solid 1px var(--button-go-color);
+  height: 30px;
+  width: 50px;
+  border-radius: 12px;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+.go-button:hover {
+  background-color: var(--button-go-color);
+  color: var(--text-color);
+  opacity: 0.9;
 }
 .clear-button {
   background-color: var(--background-color);
@@ -69,8 +79,8 @@ header {
   height: 30px;
   width: 50px;
   border-radius: 12px;
-  margin-left: 10px;
-  margin-top: 7px;
+  margin-right: 10px;
+  margin-top: 4px;
 }
 .clear-button:hover {
   background-color: var(--button-color);
@@ -81,90 +91,58 @@ header {
   color: #e1a71f;
   font-weight: 700;
   font-size: 24px;
+  margin: 50px auto;
 }
 .loading {
   height: 32px;
+  text-align: center;
+  margin: 10px auto;
 }
 .loading-text {
   color: var(--text-color-yellow);
   letter-spacing: 3px;
 }
-.container {
-  margin: 0 auto;
-}
 .menu-container {
+  width: 90%;
   margin: auto;
-  max-width: 1200px;
+  display: flex;
+}
+nav{
+  width: 100%;
 }
 .menu {
+  justify-content: space-evenly;
   align-content: center;
   list-style: none;
+  padding: 0;
   margin: 0;
   color: #fafaf6;
+}
+.menu li {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .menu a {
   padding: 0 5px;
   letter-spacing: 1px;
-  align-self: center;
+}
+/* links */
+#back-to-top,
+.button-class,
+.footer-text a,
+.menu a {
+  text-decoration: none;
 }
 #back-to-top:hover,
 .footer-text a:hover,
 .menu a:hover {
   text-decoration: underline;
 }
-.normal {
-  color: #adb5a1;
-}
-.fire {
-  color: #ee8130;
-}
-.water {
-  color: #4c88e2;
-}
-.electric {
-  color: #f7d02c;
-}
-.grass {
-  color: #30a85d;
-}
-.ice {
-  color: #96d9d6;
-}
-.fighting {
-  color: #cb524d;
-}
-.poison {
-  color: #b465b2;
-}
-.ground {
-  color: #d1aa4a;
-}
-.flying {
-  color: #8cbbe9;
-}
-.psychic {
-  color: #f95587;
-}
-.bug {
-  color: #89a830;
-}
-.rock {
-  color: #bfb067;
-}
-.ghost {
-  color: #857a94;
-}
-.dragon {
-  color: #8d65f3;
-}
-.dark {
-  color: #b08d76;
-}
-.steel {
-  color: #b7b7ce;
-}
-.fairy {
-  color: #d685ad;
+/* main content */
+.container {
+  margin: 0 auto;
 }
 .pokemon-list {
   list-style: none;
@@ -197,6 +175,21 @@ header {
 .button-img {
   width: 90px;
   text-align: right;
+}
+/* modal */
+.modal {
+  box-sizing: border-box;
+}
+.modal h1 {
+  text-align: center;
+}
+.button-class,
+.modal h1 {
+  text-transform: capitalize;
+}
+#modal-container,
+.hidden {
+  display: none;
 }
 #modal-container.is-visible {
   position: fixed;
@@ -260,16 +253,19 @@ header {
   color: var(--text-color-grey);
   text-align: center;
 }
+/* footer */
 footer {
-  left: 0;
+  position: relative;
+  /* bottom: 0; */
+  margin-top: auto;
   width: 100%;
   text-align: center;
-  padding: 10px;
   z-index: 1000;
 }
 .footer-text {
   color: var(--text-color);
   font-size: 14px;
+  padding: 20px;
 }
 .footer-text a {
   color: var(--text-color-yellow);
@@ -281,12 +277,71 @@ footer {
   margin-bottom: 10px;
 }
 #back-to-top {
+  position: fixed;
+  bottom: 0;
+  background-color: var(--background-color);
   opacity: 0.8;
   border-radius: 5%;
   width: 100px;
   color: var(--text-color);
   font-size: 15px;
 }
+/* pokemon colors */
+.normal {
+  color: #adb5a1;
+}
+.fire {
+  color: #ee8130;
+}
+.water {
+  color: #4c88e2;
+}
+.electric {
+  color: #f7d02c;
+}
+.grass {
+  color: #30a85d;
+}
+.ice {
+  color: #96d9d6;
+}
+.fighting {
+  color: #cb524d;
+}
+.poison {
+  color: #b465b2;
+}
+.ground {
+  color: #d1aa4a;
+}
+.flying {
+  color: #8cbbe9;
+}
+.psychic {
+  color: #f95587;
+}
+.bug {
+  color: #89a830;
+}
+.rock {
+  color: #bfb067;
+}
+.ghost {
+  color: #857a94;
+}
+.dragon {
+  color: #8d65f3;
+}
+.dark {
+  color: #b08d76;
+}
+.steel {
+  color: #b7b7ce;
+}
+.fairy {
+  color: #d685ad;
+}
+/* media queries */
 @media (min-width: 1201px) {
   .container {
     margin: 0 10%;
@@ -299,13 +354,16 @@ footer {
     font-size: 17px;
   }
 }
-@media (max-width: 1200px) {
+@media (min-width: 1201px) {
   .menu {
     display: grid;
     grid-template-columns: repeat(11, 1fr);
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+  .header{
+    padding: 0;
+  }
   .pokemon-list {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -315,6 +373,9 @@ footer {
   }
 }
 @media (max-width: 768px) {
+  .search-container {
+    margin-left: 50px;
+  }
   .pokemon-list {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -329,6 +390,9 @@ footer {
     width: 100%;
     display: flex;
   }
+  .search-form{
+    justify-content: center;
+  }
   header {
     flex-direction: column;
     justify-content: center;
@@ -340,6 +404,7 @@ footer {
     margin: auto auto 10px;
   }
   .search-container {
+    margin-left: 0;
     margin-top: 10px;
     justify-content: center;
   }
