@@ -187,6 +187,19 @@ let pokemonRepository = (function () {
     });
   });
 
+  // Handle active state for menu links
+  document.querySelectorAll(".menu a").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault(); // Prevent default link behavior (if needed)
+      // Remove 'active' class from all links
+      document
+        .querySelectorAll(".menu a")
+        .forEach((el) => el.classList.remove("active"));
+      // Add 'active' class to the clicked link
+      link.classList.add("active");
+    });
+  });
+
   // Pokemon list
   function addListItem(pokemon) {
     let pokemonUl = document.querySelector(".pokemon-list");
@@ -416,6 +429,15 @@ let pokemonRepository = (function () {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+
+  // Reset the view when clicking on the logo
+  const logo = document.querySelector("#logo");
+  // Reuse the "Clear" button functionality
+  logo.addEventListener("click", function (event) {
+    event.preventDefault();
+    searchInput.value = "";
+    filterPokemonList("");
+  });
 
   return {
     add: add,

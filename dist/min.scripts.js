@@ -151,6 +151,15 @@ let pokemonRepository = (function () {
       filterByType(type);
     });
   });
+  document.querySelectorAll(".menu a").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      document
+        .querySelectorAll(".menu a")
+        .forEach((el) => el.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
   function addListItem(pokemon) {
     let pokemonUl = document.querySelector(".pokemon-list");
     let pokemonLi = document.createElement("li");
@@ -338,6 +347,12 @@ let pokemonRepository = (function () {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+  const logo = document.querySelector("#logo");
+  logo.addEventListener("click", function (event) {
+    event.preventDefault();
+    searchInput.value = "";
+    filterPokemonList("");
+  });
   return {
     add: add,
     getAll: getAll,
