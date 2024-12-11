@@ -417,16 +417,6 @@ let pokemonRepository = (function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-  // // show the footer only when user scroll down
-  // window.addEventListener("scroll", function () {
-  //   const footer = document.querySelector("footer");
-  //   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-  //     footer.style.display = "block"; // Show the footer
-  //   } else {
-  //     footer.style.display = "none"; // Hide the footer
-  //   }
-  // });
-
   return {
     add: add,
     getAll: getAll,
