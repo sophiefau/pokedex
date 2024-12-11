@@ -414,8 +414,8 @@ let pokemonRepository = (function () {
   // Show or hide the "Back to Top" button based on scroll position
   window.addEventListener("scroll", function () {
     const backToTopButton = document.getElementById("back-to-top");
-    if (window.scrollY > 200) {
-      // Show the button after scrolling down 200px
+    if (window.scrollY > 220) {
+      // Show the button after scrolling down 220px
       backToTopButton.style.display = "block";
     } else {
       backToTopButton.style.display = "none";
@@ -432,11 +432,13 @@ let pokemonRepository = (function () {
 
   // Reset the view when clicking on the logo
   const logo = document.querySelector("#logo");
-  // Reuse the "Clear" button functionality
   logo.addEventListener("click", function (event) {
     event.preventDefault();
     searchInput.value = "";
     filterPokemonList("");
+    document.querySelectorAll(".menu a").forEach((link) => {
+    link.classList.remove("active");
+  });
   });
 
   return {

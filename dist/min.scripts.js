@@ -335,7 +335,7 @@ let pokemonRepository = (function () {
   });
   window.addEventListener("scroll", function () {
     const backToTopButton = document.getElementById("back-to-top");
-    if (window.scrollY > 200) {
+    if (window.scrollY > 220) {
       backToTopButton.style.display = "block";
     } else {
       backToTopButton.style.display = "none";
@@ -352,6 +352,9 @@ let pokemonRepository = (function () {
     event.preventDefault();
     searchInput.value = "";
     filterPokemonList("");
+    document.querySelectorAll(".menu a").forEach((link) => {
+      link.classList.remove("active");
+    });
   });
   return {
     add: add,
